@@ -1,4 +1,5 @@
-import * as firebase from "firebase/app";
+import firebase from "firebase/app";
+import "firebase/auth";
 
 // react에서는 환경변수 앞에 REACT_APP_을 붙여줘야 함
 const firebaseConfig = {
@@ -10,4 +11,8 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_APP_ID,
 };
 
-export default firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
+
+export const firebaseInstance = firebase;
+
+export const authService = firebase.auth();
