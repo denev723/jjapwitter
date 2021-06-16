@@ -47,7 +47,6 @@ const Auth = () => {
     const data = await authService.signInWithPopup(provider);
     console.log(data);
   };
-
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -77,10 +76,10 @@ const Auth = () => {
         {newAccount ? "Sign In" : "Create Account"}
       </span>
       <div>
-        <button name="google" onClick={onSocialClick}>
+        <button onClick={onSocialClick} name="google">
           Continue with Google
         </button>
-        <button name="github" onClick={onSocialClick}>
+        <button onClick={onSocialClick} name="github">
           Continue with Github
         </button>
       </div>
